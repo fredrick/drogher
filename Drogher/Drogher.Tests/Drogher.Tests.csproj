@@ -68,6 +68,7 @@
     <Compile Include="DrogherZookeeperClientShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ensemble\FixedEnsembleProviderShould.cs" />
+    <Compile Include="Utils\DefaultZooKeeperFactoryShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -90,5 +91,6 @@
   -->
   <ItemGroup>
     <Folder Include="Ensemble\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
 </Project>

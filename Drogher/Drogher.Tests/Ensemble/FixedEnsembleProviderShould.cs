@@ -1,6 +1,6 @@
 using System;
-using NUnit.Framework;
 using Drogher.Ensemble;
+using NUnit.Framework;
 
 namespace Drogher.Tests.Ensemble
 {

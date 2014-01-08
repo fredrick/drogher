@@ -7,7 +7,6 @@ namespace Drogher
 	{
 		public DrogherZookeeperClient(IZooKeeper zooKeeper)
 		{
-		
 		}
 
 		public void Dispose()

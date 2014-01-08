@@ -1,10 +1,8 @@
-using System;
-
 namespace Drogher.Ensemble
 {
 	public class FixedEnsembleProvider : IEnsembleProvider
 	{
-		private readonly string _connectionString;
+		readonly string _connectionString;
 
 		public FixedEnsembleProvider(string connectionString)
 		{
@@ -21,4 +19,3 @@ namespace Drogher.Ensemble
 		}
 	}
 }
-
