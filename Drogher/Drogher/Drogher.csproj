@@ -45,7 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrogherZookeeperClient.cs" />
+    <Compile Include="DrogherZooKeeperClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ensemble\IEnsembleProvider.cs" />
     <Compile Include="Ensemble\FixedEnsembleProvider.cs" />

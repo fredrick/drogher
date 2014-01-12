@@ -9,7 +9,7 @@ using ZooKeeperNet;
 namespace Drogher.Tests
 {
     [TestFixture]
-    public class DrogherZookeeperClientShould
+    public class DrogherZooKeeperClientShould
     {
         private AutoMoqer _mocker;
         private Mock<IZooKeeperFactory> _zooKeeperFactory;
@@ -18,7 +18,7 @@ namespace Drogher.Tests
         private Mock<IRetryPolicy> _retryPolicy;
         private TimeSpan _sessionTimeout;
         private TimeSpan _connectionTimeout;
-        private DrogherZookeeperClient _drogherZookeeperClient;
+        private DrogherZooKeeperClient _drogherZooKeeperClient;
 
         [SetUp]
         public void Given()
@@ -30,7 +30,7 @@ namespace Drogher.Tests
             _retryPolicy = _mocker.GetMock<IRetryPolicy>();
             _sessionTimeout = TimeSpan.FromSeconds(30);
             _connectionTimeout = TimeSpan.FromSeconds(30);
-            _drogherZookeeperClient = new DrogherZookeeperClient(
+            _drogherZooKeeperClient = new DrogherZooKeeperClient(
                 _zooKeeperFactory.Object,
                 _ensembleProvider.Object,
                 _sessionTimeout,
@@ -42,7 +42,7 @@ namespace Drogher.Tests
         [TestCase]
         public void CreateZookeeperClient()
         {
-            Assert.NotNull(_drogherZookeeperClient);
+            Assert.NotNull(_drogherZooKeeperClient);
         }
 
         [TestCase]
@@ -50,7 +50,7 @@ namespace Drogher.Tests
         {
             Assert.Throws<ArgumentNullException>(
                 () =>
-                    new DrogherZookeeperClient(_zooKeeperFactory.Object, _ensembleProvider.Object, _sessionTimeout,
+                    new DrogherZooKeeperClient(_zooKeeperFactory.Object, _ensembleProvider.Object, _sessionTimeout,
                         _connectionTimeout,
                         _watcher.Object,
                         null));
@@ -61,7 +61,7 @@ namespace Drogher.Tests
         {
             Assert.Throws<ArgumentNullException>(
                 () =>
-                    new DrogherZookeeperClient(_zooKeeperFactory.Object, null, _sessionTimeout, _connectionTimeout,
+                    new DrogherZooKeeperClient(_zooKeeperFactory.Object, null, _sessionTimeout, _connectionTimeout,
                         _watcher.Object,
                         _retryPolicy.Object));
         }

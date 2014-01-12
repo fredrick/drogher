@@ -69,7 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrogherZookeeperClientShould.cs" />
+    <Compile Include="DrogherZooKeeperClientShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ensemble\FixedEnsembleProviderShould.cs" />
     <Compile Include="Utils\DefaultZooKeeperFactoryShould.cs" />

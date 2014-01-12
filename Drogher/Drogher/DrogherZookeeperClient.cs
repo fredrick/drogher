@@ -6,12 +6,13 @@ using ZooKeeperNet;
 
 namespace Drogher
 {
-    public class DrogherZookeeperClient : IDisposable
+    public class DrogherZooKeeperClient : IDisposable
     {
-        private readonly ILog _log = LogManager.GetLogger(typeof (DrogherZookeeperClient));
-        private bool Started = false;
+        private readonly ILog _log = LogManager.GetLogger(typeof (DrogherZooKeeperClient));
+        private bool _started = false;
+        private TimeSpan _connectionTimeout;
 
-        public DrogherZookeeperClient(IZooKeeperFactory zooKeeperFactory, IEnsembleProvider ensembleProvider,
+        public DrogherZooKeeperClient(IZooKeeperFactory zooKeeperFactory, IEnsembleProvider ensembleProvider,
             TimeSpan sessionTimeout, TimeSpan connectionTimeout, IWatcher watcher, IRetryPolicy retryPolicy)
         {
             if (sessionTimeout < connectionTimeout)
@@ -22,11 +23,13 @@ namespace Drogher
 
             if (retryPolicy == null) throw new ArgumentNullException("retryPolicy");
             if (ensembleProvider == null) throw new ArgumentNullException("ensembleProvider");
+
+            _connectionTimeout = connectionTimeout;
         }
 
         public void Dispose()
         {
-            Started = false;
+            _started = false;
         }
     }
 }
