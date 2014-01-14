@@ -69,9 +69,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionStateShould.cs" />
     <Compile Include="DrogherZooKeeperClientShould.cs" />
+    <Compile Include="HandleHolderShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ensemble\FixedEnsembleProviderShould.cs" />
+    <Compile Include="StubWatcher.cs" />
     <Compile Include="Utils\DefaultZooKeeperFactoryShould.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -8,16 +8,15 @@ namespace Drogher
 {
     public class DrogherZooKeeperClient : IDisposable
     {
-        private readonly ILog _log = LogManager.GetLogger(typeof (DrogherZooKeeperClient));
-        private bool _started = false;
         private TimeSpan _connectionTimeout;
+        private bool _started;
 
         public DrogherZooKeeperClient(IZooKeeperFactory zooKeeperFactory, IEnsembleProvider ensembleProvider,
-            TimeSpan sessionTimeout, TimeSpan connectionTimeout, IWatcher watcher, IRetryPolicy retryPolicy)
+            TimeSpan sessionTimeout, TimeSpan connectionTimeout, IWatcher watcher, IRetryPolicy retryPolicy, ILog log)
         {
             if (sessionTimeout < connectionTimeout)
             {
-                _log.WarnFormat("session timeout {0} is less than connection timeout {1}", sessionTimeout,
+                log.WarnFormat("session timeout {0} is less than connection timeout {1}", sessionTimeout,
                     connectionTimeout);
             }
 

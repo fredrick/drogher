@@ -45,7 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionState.cs" />
     <Compile Include="DrogherZooKeeperClient.cs" />
+    <Compile Include="HandleHolder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ensemble\IEnsembleProvider.cs" />
     <Compile Include="Ensemble\FixedEnsembleProvider.cs" />
